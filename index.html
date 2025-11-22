@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffee Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              50: '#f7f3f0',
+              100: '#efe6df',
+              200: '#dfcebf',
+              300: '#c8ab93',
+              400: '#aa876a',
+              500: '#8c6a4f',
+              600: '#6f523f',
+              700: '#573f33',
+              800: '#3d2b22',
+              900: '#241913'
+            },
+            cream: '#f8f4ec'
+          },
+          fontFamily: {
+            sans: ['Poppins','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Helvetica','Arial','Noto Sans','sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-sans text-coffee-900 bg-cream">
+  <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur border-b border-coffee-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#" class="text-2xl font-bold text-coffee-800">Coffee Shop</a>
+        <nav class="hidden md:flex gap-6 text-coffee-800">
+          <a href="#menu" class="hover:text-coffee-600">Menu</a>
+          <a href="#about" class="hover:text-coffee-600">About</a>
+          <a href="#locations" class="hover:text-coffee-600">Locations</a>
+          <a href="#contact" class="hover:text-coffee-600">Contact</a>
+          <a href="#menu" class="ml-2 inline-flex items-center rounded-md bg-coffee-700 px-3 py-2 text-cream hover:bg-coffee-800">Order</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-coffee-800 hover:bg-coffee-100 focus:outline-none focus:ring-2 focus:ring-coffee-300">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <div class="space-y-1">
+          <a href="#menu" class="block px-3 py-2 text-coffee-800 hover:bg-coffee-100 rounded">Menu</a>
+          <a href="#about" class="block px-3 py-2 text-coffee-800 hover:bg-coffee-100 rounded">About</a>
+          <a href="#locations" class="block px-3 py-2 text-coffee-800 hover:bg-coffee-100 rounded">Locations</a>
+          <a href="#contact" class="block px-3 py-2 text-coffee-800 hover:bg-coffee-100 rounded">Contact</a>
+          <a href="#menu" class="block px-3 py-2 text-cream bg-coffee-700 hover:bg-coffee-800 rounded">Order</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-coffee-900">Brewed fresh, served warm</h1>
+          <p class="mt-4 text-lg text-coffee-700">Discover artisan coffee and freshly baked pastries made with care.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#menu" class="inline-flex items-center rounded-md bg-coffee-700 px-5 py-3 text-cream hover:bg-coffee-800">View Menu</a>
+            <a href="#locations" class="inline-flex items-center rounded-md border border-coffee-300 px-5 py-3 text-coffee-800 hover:bg-coffee-100">Find Us</a>
+          </div>
+        </div>
+        <div class="relative">
+          <img class="w-full h-80 object-cover rounded-xl shadow-xl" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop" alt="A cup of coffee on a table">
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-semibold text-coffee-900">Favorites</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border border-coffee-100 p-5 bg-cream">
+            <img class="w-full h-40 object-cover rounded-md" src="https://images.unsplash.com/photo-1503481766315-7a586b20f66b?q=80&w=1200&auto=format&fit=crop" alt="Espresso">
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-lg font-semibold">Espresso</h3>
+                <p class="text-sm text-coffee-700">Rich and intense</p>
+              </div>
+              <span class="text-coffee-800 font-semibold">$2.50</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-coffee-100 p-5 bg-cream">
+            <img class="w-full h-40 object-cover rounded-md" src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop" alt="Cappuccino">
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-lg font-semibold">Cappuccino</h3>
+                <p class="text-sm text-coffee-700">Velvety foam</p>
+              </div>
+              <span class="text-coffee-800 font-semibold">$3.50</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-coffee-100 p-5 bg-cream">
+            <img class="w-full h-40 object-cover rounded-md" src="https://images.unsplash.com/photo-1469631398206-bcd0c1b1b5b6?q=80&w=1200&auto=format&fit=crop" alt="Iced Latte">
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-lg font-semibold">Iced Latte</h3>
+                <p class="text-sm text-coffee-700">Smooth and refreshing</p>
+              </div>
+              <span class="text-coffee-800 font-semibold">$4.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="py-16 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-3xl font-bold text-coffee-900">Menu</h2>
+          <a href="#contact" class="text-coffee-800 hover:text-coffee-700">Custom orders</a>
+        </div>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border border-coffee-100 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Americano</h3>
+              <span class="text-coffee-800 font-semibold">$3.00</span>
+            </div>
+            <p class="mt-1 text-sm text-coffee-700">Espresso with hot water</p>
+          </div>
+          <div class="rounded-xl border border-coffee-100 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Flat White</h3>
+              <span class="text-coffee-800 font-semibold">$3.80</span>
+            </div>
+            <p class="mt-1 text-sm text-coffee-700">Silky microfoam</p>
+          </div>
+          <div class="rounded-xl border border-coffee-100 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Mocha</h3>
+              <span class="text-coffee-800 font-semibold">$4.20</span>
+            </div>
+            <p class="mt-1 text-sm text-coffee-700">Chocolate and espresso</p>
+          </div>
+          <div class="rounded-xl border border-coffee-100 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Matcha Latte</h3>
+              <span class="text-coffee-800 font-semibold">$4.50</span>
+            </div>
+            <p class="mt-1 text-sm text-coffee-700">Ceremonial grade</p>
+          </div>
+          <div class="rounded-xl border border-coffee-100 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Cold Brew</h3>
+              <span class="text-coffee-800 font-semibold">$4.00</span>
+            </div>
+            <p class="mt-1 text-sm text-coffee-700">12-hour steep</p>
+          </div>
+          <div class="rounded-xl border border-coffee-100 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Chai Latte</h3>
+              <span class="text-coffee-800 font-semibold">$3.90</span>
+            </div>
+            <p class="mt-1 text-sm text-coffee-700">Spiced and aromatic</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <img class="w-full h-72 object-cover rounded-xl shadow" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop" alt="Barista pouring coffee">
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-coffee-900">Our Story</h2>
+          <p class="mt-4 text-coffee-800 leading-relaxed">Founded with a passion for craft coffee and community. We source sustainable beans, roast with care, and serve with warmth.</p>
+          <div class="mt-6 grid grid-cols-3 gap-4">
+            <div class="rounded-lg border border-coffee-100 p-4 text-center">
+              <div class="text-2xl font-bold text-coffee-800">2019</div>
+              <div class="text-sm text-coffee-700">Opened</div>
+            </div>
+            <div class="rounded-lg border border-coffee-100 p-4 text-center">
+              <div class="text-2xl font-bold text-coffee-800">30+</div>
+              <div class="text-sm text-coffee-700">Menu items</div>
+            </div>
+            <div class="rounded-lg border border-coffee-100 p-4 text-center">
+              <div class="text-2xl font-bold text-coffee-800">100%</div>
+              <div class="text-sm text-coffee-700">Arabica beans</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="locations" class="py-16 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-coffee-900">Locations & Hours</h2>
+        <div class="mt-8 grid lg:grid-cols-2 gap-8">
+          <div class="rounded-xl border border-coffee-100 bg-white p-6">
+            <h3 class="text-xl font-semibold text-coffee-900">Main Street</h3>
+            <p class="mt-2 text-coffee-800">123 Main St, Your City</p>
+            <ul class="mt-4 space-y-1 text-coffee-700">
+              <li>Mon–Fri: 7:00–19:00</li>
+              <li>Sat: 8:00–18:00</li>
+              <li>Sun: 8:00–16:00</li>
+            </ul>
+            <a href="https://maps.google.com/?q=123+Main+St" class="mt-4 inline-flex items-center rounded-md border border-coffee-300 px-4 py-2 text-coffee-800 hover:bg-coffee-100">Open in Maps</a>
+          </div>
+          <div class="rounded-xl border border-coffee-100 bg-white p-6">
+            <h3 class="text-xl font-semibold text-coffee-900">Riverside</h3>
+            <p class="mt-2 text-coffee-800">45 River Ave, Your City</p>
+            <ul class="mt-4 space-y-1 text-coffee-700">
+              <li>Mon–Fri: 7:00–19:00</li>
+              <li>Sat: 8:00–18:00</li>
+              <li>Sun: 8:00–16:00</li>
+            </ul>
+            <a href="https://maps.google.com/?q=45+River+Ave" class="mt-4 inline-flex items-center rounded-md border border-coffee-300 px-4 py-2 text-coffee-800 hover:bg-coffee-100">Open in Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-coffee-900">Contact Us</h2>
+        <p class="mt-2 text-coffee-800">Ask a question, plan an event, or say hello.</p>
+        <form id="contact-form" class="mt-8 grid grid-cols-1 gap-6" action="#" method="post">
+          <div>
+            <label for="name" class="block text-sm font-medium text-coffee-900">Name</label>
+            <input id="name" name="name" type="text" required class="mt-1 block w-full rounded-md border border-coffee-200 bg-cream px-3 py-2 text-coffee-900 placeholder-coffee-400 focus:outline-none focus:ring-2 focus:ring-coffee-300">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-coffee-900">Email</label>
+            <input id="email" name="email" type="email" required class="mt-1 block w-full rounded-md border border-coffee-200 bg-cream px-3 py-2 text-coffee-900 placeholder-coffee-400 focus:outline-none focus:ring-2 focus:ring-coffee-300">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-coffee-900">Message</label>
+            <textarea id="message" name="message" rows="5" required class="mt-1 block w-full rounded-md border border-coffee-200 bg-cream px-3 py-2 text-coffee-900 placeholder-coffee-400 focus:outline-none focus:ring-2 focus:ring-coffee-300"></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center justify-center rounded-md bg-coffee-700 px-5 py-3 text-cream hover:bg-coffee-800">Send Message</button>
+          <div id="contact-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-coffee-100 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-coffee-700">© <span id="year"></span> Coffee Shop. All rights reserved.</p>
+      <div class="flex gap-4 text-coffee-800">
+        <a href="#" class="hover:text-coffee-700">Instagram</a>
+        <a href="#" class="hover:text-coffee-700">Facebook</a>
+        <a href="#" class="hover:text-coffee-700">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
